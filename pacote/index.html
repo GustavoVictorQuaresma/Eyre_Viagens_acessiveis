@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./imagens/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;500&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="./script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Eyre - Viagens acessíveis</title>
+</head>
+
+<body>
+    <div class="topo">
+        <div class="cabecalho">
+            <a href="../index.html">
+                <img src="./imagens/logoEyre2.png" class="logo">
+            </a>
+            <div class="botoesCabecalho">
+                <button class="botaoBrancoValor" id="orcamento">R$ 0,00</button>
+                <button class="botaoBrancoLocalizacao" id="Destino">- RJ</button>
+                <button class="botaoBrancoData" id="IdaVolta">22 set - 24 set</button>
+                <a href="../pagamento/index.html"><button class="botaoAzul">Reservar agora</button></a>
+            </div>
+        </div>
+        <div class="blocos">
+            <div class="esquerda">
+                <p class="titulo" id="titulo">Arraial do Cabo - Brisas do Farol</p>
+                <img src="./imagens/BrisasDoFarol.jpg" id="imagemPrincipal" class="imagem1">
+                <div class="fundoDescricao">
+                    <p class="descricao" id="descricao">Localizado em Arraial do Cabo e com a Praia Grande a cerca de
+                        600 metros, a
+                        propriedade está
+                        situada
+                        a 300 m da Praça da Independência, a 500 m do Estádio Hermenegildo Barcellos e a 400 m da
+                        Prefeitura
+                        de Arraial do Cabo. O Museu Oceanográfico fica a menos de 1 km de distância e a Igreja Nossa
+                        Senhora
+                        dos Remédios fica a 12 minutos a pé da pousada.</p>
+                </div>
+                <div class="fotosBrisas">
+                    <img src="./imagens/fotosbrisas.png" class="imgBrisas" onclick="abrirModal()">
+                </div>
+                <div id="meuModal" class="modal">
+                    <span class="fechar" onclick="fecharModal()">&times;</span>
+                    <a class="anterior" onclick="retrocederImagem()">&#10094;</a>
+                    <a class="proximo" onclick="avancarImagem()">&#10095;</a>
+                    <div class="galeria">
+                        <img src="./imagens/BrisasDoFarol.jpg" class="modal-conteudo">
+                        <img src="./imagens/pousadaBrisasDoFarol.jpg" class="modal-conteudo">
+                    </div>
+                </div>
+            </div>
+            <div class="direita">
+                <div class="elementos1">
+                    <div class="divAvaliacoes">
+                        <p class="avaliacoes">Muito bom! <strong id="avaliacoes">729</strong> avaliações</p>
+                        <div class="classificacao">
+                            <h3 id="classificacao">8,0</h3>
+                        </div>
+                    </div>
+                    <div class="mapa-container">
+                        <img src="./imagens/mapa.png" class="mapa">
+                        <button class="botao-ver-mapa" onclick="abrirModalMapa()">
+                            <div class="alinharImgTextoVerMapa">
+                                <img src="./imagens/iconmaps.png" class="iconMaps" alt="Ícone Mapa">
+                                Ver no mapa
+                            </div>
+                        </button>
+                    </div>
+                    <div id="mapModal" class="modalMapa">
+                        <div class="modal-content">
+                            <span class="close" onclick="fecharModalMapa()">&times;</span>
+                            <div class="modal-header-mapa">
+                                <img src="./imagens/iconLocalizacao.png" class="iconLocalizacaoMapa">
+                                <h5 class="modal-title">Pousada Brisas do Farol</h5>
+                            </div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.4956137863505!2d-42.02949918503327!3d-22.968795684980286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9719c84836b0df%3A0x99c9f4200ad4c12b!2sBrisas%20do%20Farol%20-%20Arraial%20do%20Cabo%20-%20Aluguel%20Econ%C3%B4mico!5e0!3m2!1spt-BR!2sbr!4v1690346062175!5m2!1spt-BR!2sbr"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="elementos2">
+                    <div class="fundoBrancoSuite">
+                        <p class="titulos" id="tipoQuarto">Suíte</p>
+                        <div class="divDescricaoSuite">
+                            <img src="./imagens/cama.png" class="icons" alt="cama">
+                            <p class="textoSuite" id="descricaoQuarto">Estúdio inteiro • 1 banheiro • 1 cozinha • 20m²
+                                <br> 3 camas (2 de
+                                solteiro, 1 de casal).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="fundoBrancoServicos">
+                        <p class="titulos">Serviços de hospedagem</p>
+                        <div class="divDescricaoServicos">
+                            <img src="./imagens/cigarro.png" class="icons" alt="cigarro">
+                            <p class="texto" id="servico1">Quartos para não fumantes</p>
+                        </div>
+                        <div class="divDescricao">
+                            <img src="./imagens/wi-fi.png" class="icons" alt="wi-fi">
+                            <p class="texto" id="servico2">Wi-fi gratuito</p>
+                        </div>
+                        <div class="divDescricao">
+                            <img src="./imagens/recepcao.png" class="icons" alt="recepcao">
+                            <p class="texto" id="servico3">Recepção 24 horas</p>
+                        </div>
+                        <div class="divDescricao">
+                            <img src="./imagens/bar.png" class="icons" alt="bar">
+                            <p class="texto" id="servico4">Bar</p>
+                        </div>
+                    </div>
+                    <div class="fundoBrancoHospedagem">
+                        <p class="titulos">Condições de hospedagem</p>
+                        <p class="subtitulo">Horário</p>
+                        <div class="divDescricao">
+                            <img src="./imagens/saida.png" class="icons" alt="cigarro">
+                            <p class="texto">Horário de Check-in: de <strong id="primeiraCondicao">14:00</strong> às
+                                <strong>22:00</strong>
+                            </p>
+                        </div>
+                        <div class="divDescricao">
+                            <img src="./imagens/chegada.png" class="icons" alt="cigarro">
+                            <p class="texto">Horário de Check-out: <strong id="segundaCondicao">11:00</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divDetalhesTransporte">
+            <p class="tituloDetalhesTransporte">Detalhes do transporte</p>
+        </div>
+        <div class="divOpcoesVoos">
+            <p class="tituloOpcoesVoos">Opções de voos:</p>
+        </div>
+        <div class="fundoCinzaOpcoesVoos">
+            <div class="blocoBrancoEsquerdo">
+                <div class="alinharImgTexto">
+                    <img src="./imagens/aviaoIndo.png" class="imgAviao">
+                    <p class="textoIda">Ida <strong>22/09</strong></p>
+                </div>
+                <div class="alinharCheckTextImg">
+                    <div class="check-box checked" id="primeiraOpcaoIdaVoo" onclick="toggleCheck(this)"
+                        data-side="left">
+                        <div class="check-mark"></div>
+                    </div>
+                    <img src="./imagens/latam.png" class="imgLatam" id="imgCompanhiaAerea1">
+                    <p class="infoVoo" id="companhiaAerea1">LATAM</p>
+                    <p class="infoVoo"><strong id="horarioIda1">16:40</strong></p>
+                    <p class="infoVooDireto" id="tipoVoo1">Direto</p>
+                    <p class="infoVoo"><strong id="horarioVolta1">17:45</strong></p>
+                    <p class="infoVoo" id="duracaoVoo1">1h 5m</p>
+                    <img src="./imagens/mala.png" class="imgMala">
+                </div>
+                <div class="alinharCheckTextImg">
+                    <div class="check-box" id="segundaOpcaoIdaVoo" onclick="toggleCheck(this)" data-side="left">
+                        <div class="check-mark"></div>
+                    </div>
+                    <img src="./imagens/latam.png" class="imgLatam" id="imgCompanhiaAerea2">
+                    <p class="infoVoo" id="companhiaAerea2">LATAM</p>
+                    <p class="infoVoo"><strong id="horarioIda2">16:40</strong></p>
+                    <p class="infoVooDireto" id="tipoVoo2">Direto</p>
+                    <p class="infoVoo"><strong id="horarioVolta2">17:45</strong></p>
+                    <p class="infoVoo" id="duracaoVoo2">1h 5m</p>
+                    <img src="./imagens/mala.png" class="imgMala">
+                </div>
+            </div>
+            <img src="./imagens/seta.png" class="imgSeta">
+            <div class="blocoBrancoDireito">
+                <div class="alinharImgTexto">
+                    <img src="./imagens/aviaoVoltando.png" class="imgAviao">
+                    <p class="textoIda">Volta <strong>24/09</strong></p>
+                </div>
+                <div class="alinharCheckTextImg">
+                    <div class="check-box checked" id="primeiraOpcaoVoltaVoo" onclick="toggleCheck(this)"
+                        data-side="right">
+                        <div class="check-mark"></div>
+                    </div>
+                    <img src="./imagens/latam.png" class="imgLatam" id="imgCompanhiaAerea3">
+                    <p class="infoVoo" id="companhiaAerea3">LATAM</p>
+                    <p class="infoVoo"><strong id="horarioIda3">06:20</strong></p>
+                    <p class="infoVooDireto" id="tipoVoo3">Direto</p>
+                    <p class="infoVoo"><strong id="horarioVolta3">07:25</strong></p>
+                    <p class="infoVoo" id="duracaoVoo3">1h 5m</p>
+                    <img src="./imagens/mala.png" class="imgMala">
+                </div>
+                <div class="alinharCheckTextImg">
+                    <div class="check-box" id="segundaOpcaoVoltaVoo" onclick="toggleCheck(this)" data-side="right">
+                        <div class="check-mark"></div>
+                    </div>
+                    <img src="./imagens/latam.png" class="imgLatam" id="imgCompanhiaAerea4">
+                    <p class="infoVoo" id="companhiaAerea4">LATAM</p>
+                    <p class="infoVoo"><strong id="horarioIda4">09:45</strong></p>
+                    <p class="infoVooDireto" id="tipoVoo4">Direto</p>
+                    <p class="infoVoo"><strong id="horarioVolta4">10:50</strong></p>
+                    <p class="infoVoo" id="duracaoVoo4">1h 5m</p>
+                    <img src="./imagens/mala.png" class="imgMala">
+                </div>
+            </div>
+        </div>
+        <div class="divOpcoesOnibus">
+            <p class="tituloOpcoesOnibus">Opções de ônibus:</p>
+        </div>
+        <div class="fundoCinzaOpcoesVoos">
+            <div class="blocoBrancoEsquerdo">
+                <div class="alinharDuasDivImgTextoOnibus">
+                    <img src="./imagens/buser.png" class="imgBuser">
+                    <div class="alinharImgTextoOnibus">
+                        <img src="./imagens/onibus.png" class="imgOnibus">
+                        <p class="textoBuser">Parceiro Buser</p>
+                        <p class="textoPoltrona">Poltrona:</p>
+                    </div>
+                    <div class="alinharImgTextoOnibus">
+                        <img src="./imagens/informacao.png" class="imgOnibus">
+                        <p class="textoBuser">Embarque com documento</p>
+                        <img src="./imagens/poltrona.png" class="imgPoltrona" id="primeirotipoPoltronaIcone">
+                        <p class="textoLeito"><strong id="primeirotipoPoltrona">Semi-leito</strong></p>
+                    </div>
+                </div>
+                <div class="divEmbarqueDesembarque">
+                    <ul class="horaEmbarqueDesembarque">
+                        <li><strong id="primeiroHorarioEmbarque">11:45</strong></li>
+                        <li><strong id="primeiroHorarioDesembarque">22:05</strong></li>
+                    </ul>
+                    <img src="./imagens/destino.png" class="imgDestino">
+                    <ul class="embarqueDestino">
+                        <li>Embarque: <strong id="primeiroLocalEmbarque">Belo Horizonte</strong></li>
+                        <li>Desembarque: <strong id="primeiroLocalDesembarque">Arraial do Cabo</strong></li>
+                    </ul>
+                    <div class="divBotaoSelecionar">
+                        <button class="botaoSelecionar" id="PrimeiraOpcaoOnibusSelecionado"
+                            onclick="toggleSelection(this)">Selecionar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="divTextoOu">
+                <p class="textoOu">ou</p>
+            </div>
+            <div class="blocoBrancoDireito">
+                <div class="alinharDuasDivImgTextoOnibus">
+                    <img src="./imagens/buser.png" class="imgBuser">
+                    <div class="alinharImgTextoOnibus">
+                        <img src="./imagens/onibus.png" class="imgOnibus">
+                        <p class="textoBuser">Parceiro Buser</p>
+                        <p class="textoPoltrona">Poltrona:</p>
+                    </div>
+                    <div class="alinharImgTextoOnibus">
+                        <img src="./imagens/informacao.png" class="imgOnibus">
+                        <p class="textoBuser">Embarque com documento</p>
+                        <img src="./imagens/poltrona.png" class="imgPoltrona" id="segundotipoPoltronaIcone">
+                        <p class="textoLeito"><strong id="segundotipoPoltrona">Semi-leito</strong></p>
+                    </div>
+                </div>
+                <div class="divEmbarqueDesembarque">
+                    <ul class="horaEmbarqueDesembarque">
+                        <li><strong id="segundoHorarioEmbarque">08:30</strong></li>
+                        <li><strong id="segundoHorarioDesembarque">19:15</strong></li>
+                    </ul>
+                    <img src="./imagens/destino.png" class="imgDestino">
+                    <ul class="embarqueDestino">
+                        <li>Embarque: <strong id="segundoLocalEmbarque">Arraial do Cabo</strong></li>
+                        <li>Desembarque: <strong id="segundoLocalDesembarque">Belo Horizonte</strong></li>
+                    </ul>
+                    <div class="divBotaoSelecionar">
+                        <button class="botaoSelecionar" id="SegundaOpcaoOnibusSelecionado"
+                            onclick="toggleSelection(this)">Selecionar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divDicasLugares">
+            <p class="tituloDicasLugares">Dicas de lugares para visitar nas proximidades</p>
+            <img src="./imagens/camera.png" class="imgCamera">
+        </div>
+        <div class="alinharBotaoCategoriaLugares">
+            <div class="divCategoriaLugares">
+                <button class="botaoCategoriaLugares" onclick="toggleSelectionCategoria('turistico')"
+                    id="turistico">Turístico</button>
+            </div>
+            <div class="divCategoriaLugares">
+                <button class="botaoCategoriaLugares" onclick="toggleSelectionCategoria('restaurantes')"
+                    id="restaurantes">Restaurantes</button>
+            </div>
+            <div class="divCategoriaLugares">
+                <button class="botaoCategoriaLugares" onclick="toggleSelectionCategoria('bares')"
+                    id="bares">Bares</button>
+            </div>
+        </div>
+        <div>
+            <div id="turisticoContent" class="categoriaContent">
+                <div class="restauranteContainer">
+                    <p class="tituloMangaraRestaurante" id="tituloTuristico1">Turístico</p>
+                    <img src="./imagens/mangaraRestaurante.jpg" class="imgMangaraRestaurante" id="imagemTuristico1">
+                </div>
+                <div class="restauranteContainer">
+                    <p class="tituloMangaraRestaurante" id="tituloTuristico2">Turístico</p>
+                    <img src="./imagens/casaDaPiedra.jpg" class="imgMangaraRestaurante" id="imagemTuristico2">
+                </div>
+                <div class="restauranteContainer">
+                    <p class="tituloMangaraRestaurante" id="tituloTuristico3">Turístico</p>
+                    <img src="./imagens/solNaCozinha.jpg" class="imgMangaraRestaurante" id="imagemTuristico3">
+                </div>
+            </div>
+        </div>
+        <div id="restaurantesContent" class="categoriaContent">
+            <div class="restauranteContainer">
+                <p class="tituloMangaraRestaurante" id="tituloRestaurante1">Mangará Restaurante</p>
+                <img src="./imagens/mangaraRestaurante.jpg" class="imgMangaraRestaurante" id="imagemRestaurante1">
+            </div>
+            <div class="restauranteContainer">
+                <p class="tituloMangaraRestaurante" id="tituloRestaurante2">Casa da Piedra</p>
+                <img src="./imagens/casaDaPiedra.jpg" class="imgMangaraRestaurante" id="imagemRestaurante2">
+            </div>
+            <div class="restauranteContainer">
+                <p class="tituloMangaraRestaurante" id="tituloRestaurante3">Sol na Cozinha</p>
+                <img src="./imagens/solNaCozinha.jpg" class="imgMangaraRestaurante" id="imagemRestaurante3">
+            </div>
+        </div>
+        <div id="baresContent" class="categoriaContent">
+            <div class="restauranteContainer">
+                <p class="tituloMangaraRestaurante" id="tituloBar1">Bares</p>
+                <img src="./imagens/mangaraRestaurante.jpg" class="imgMangaraRestaurante" id="imagemBar1">
+            </div>
+            <div class="restauranteContainer">
+                <p class="tituloMangaraRestaurante" id="tituloBar2">Bares</p>
+                <img src="./imagens/casaDaPiedra.jpg" class="imgMangaraRestaurante" id="imagemBar2">
+            </div>
+            <div class="restauranteContainer">
+                <p class="tituloMangaraRestaurante" id="tituloBar3">Bares</p>
+                <img src="./imagens/solNaCozinha.jpg" class="imgMangaraRestaurante" id="imagemBar3">
+            </div>
+        </div>
+        <div class="espaçamentoFimPagina">
+        </div>
+    </div>
+    </div>
+    </div>
+    <script>
+        let botaoSelecionarAtivo = false;
+
+        function toggleSelectionCategoria(categoria) {
+            console.log("Toggle function called with category:", categoria);
+
+            if (!botaoSelecionarAtivo) {
+                botaoSelecionarAtivo = true;
+
+                const buttons = document.getElementsByClassName("botaoCategoriaLugares");
+                for (const btn of buttons) {
+                    btn.classList.remove("botaoAtivo");
+                }
+
+                const turisticoContent = document.getElementById("turisticoContent");
+                turisticoContent.style.display = "flex";
+            }
+
+            const contents = document.getElementsByClassName("categoriaContent");
+            for (const content of contents) {
+                content.style.display = "none";
+            }
+
+            const contentToShow = document.getElementById(categoria + "Content");
+            if (contentToShow) {
+                contentToShow.style.display = "flex";
+            }
+
+            const buttons = document.getElementsByClassName("botaoCategoriaLugares");
+            for (const btn of buttons) {
+                btn.classList.remove("botaoAtivo");
+            }
+            const button = document.getElementById(categoria);
+            button.classList.add("botaoAtivo");
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const turisticoButton = document.getElementById("turistico");
+            turisticoButton.classList.add("botaoAtivo");
+            toggleSelectionCategoria("turistico");
+        });
+    </script>
+    <!-- fetch('http://localhost:8080/api/hospedagem/1/23-05-2023/true' -->
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(function (response) {
+                if (response.ok) {
+                    // A requisição deu certo
+                    return response.json();
+                } else {
+                    // A requisição falhou
+                    throw new Error('Erro na requisição: ' + response.status);
+                }
+            })
+            .then(function (data) {
+
+                // Resposta do servidor
+
+                console.log('Resposta do servidor:', data);
+
+                setTimeout(function () {
+
+                    var data = {
+                        "hospedagem": {
+                            "id": 1,
+                            "titulo": "nana professor",
+                            "descricao": "",
+                            "tipoQuarto": "SUITE",
+                            "descricaoQuarto": "",
+                            "voos": [
+                                {
+                                    "nome": "LATAM",
+                                    "listDias": {
+                                        "POSTERIOR": [
+                                            {
+                                                "listHorarios": [
+                                                    {
+                                                        "id": 7,
+                                                        "horarioSaida": "14:00:00",
+                                                        "horarioChegada": "15:50:00"
+                                                    },
+                                                    {
+                                                        "id": 8,
+                                                        "horarioSaida": "07:00:00",
+                                                        "horarioChegada": "08:40:00"
+                                                    },
+                                                    {
+                                                        "id": 9,
+                                                        "horarioSaida": "07:40:00",
+                                                        "horarioChegada": "09:40:00"
+                                                    },
+                                                    {
+                                                        "id": 10,
+                                                        "horarioSaida": "10:00:00",
+                                                        "horarioChegada": "12:10:00"
+                                                    }
+                                                ],
+                                                "tipoRota": "IDA"
+                                            }
+                                        ],
+                                        "ANTERIOR": [],
+                                        "EXATA": [
+                                            {
+                                                "listHorarios": [
+                                                    {
+                                                        "id": 1,
+                                                        "horarioSaida": "07:00:00",
+                                                        "horarioChegada": "08:40:00"
+                                                    },
+                                                    {
+                                                        "id": 2,
+                                                        "horarioSaida": "07:40:00",
+                                                        "horarioChegada": "09:42:00"
+                                                    },
+                                                    {
+                                                        "id": 3,
+                                                        "horarioSaida": "10:00:00",
+                                                        "horarioChegada": "12:10:00"
+                                                    }
+                                                ],
+                                                "tipoRota": "IDA"
+                                            },
+                                            {
+                                                "listHorarios": [
+                                                    {
+                                                        "id": 4,
+                                                        "horarioSaida": "07:00:00",
+                                                        "horarioChegada": "08:42:00"
+                                                    },
+                                                    {
+                                                        "id": 5,
+                                                        "horarioSaida": "07:40:00",
+                                                        "horarioChegada": "09:43:00"
+                                                    },
+                                                    {
+                                                        "id": 6,
+                                                        "horarioSaida": "10:00:00",
+                                                        "horarioChegada": "12:10:00"
+                                                    }
+                                                ],
+                                                "tipoRota": "VOLTA"
+                                            }
+                                        ]
+                                    },
+                                    "escala": true,
+                                    "imagemCompanhiaAerea": {
+                                        "id": 1,
+                                        "nome": "foto-1",
+                                        "tipoMidia": "FOTO_PRINCIPAL",
+                                        "dados": "caminho_da_imagem_em_base64"
+                                    }
+                                }
+                            ],
+                            "checkIn": "13:00:00",
+                            "checkOut": "20:00:00",
+                        }
+                    }
+
+                    // var data = {
+                    //     titulo: "Arraial do Cabo - Brisas do Farol",
+                    //     descricao:
+                    //         "Localizado em Arraial do Cabo e com a Praia Grande a cerca de 600 metros, a propriedade está situada a 300 m da Praça da Independência, a 500 m do Estádio Hermenegildo Brcellos e a 400 m da Prefeitura de Arraial do Cabo. O Museu Oceanográfico fica a menos de 1 km de distância e a Igreja Nossa Senhora dos Remédios fica a 12 minutos a pé da pousada.",
+                    //     imagens: [
+                    //         "./imagens/BrisasDoFarol.jpg",
+                    //         "./imagens/pousadaBrisasDoFarol.jpg",
+                    //     ],
+                    //     avaliacoes: "729",
+                    //     classificacao: "8,0",
+                    //     tipoQuarto: "Suíte",
+                    //     descricaoQuarto: "Estúdio inteiro • 1 banheiro • 1 cozinha • 20m²ㅤ3 camas (2 de solteiro, 1 de casal)",
+                    //     endereco: {},
+                    //     listExtras: [
+                    //         {
+                    //             id: 1,
+                    //             nome: "Quartos para não fumantes"
+                    //         },
+                    //         {
+                    //             id: 2,
+                    //             nome: "Wi-fi gratuito",
+                    //         },
+                    //         {
+                    //             id: 3,
+                    //             nome: "Recepção 24 horas"
+                    //         },
+                    //         {
+                    //             id: 4,
+                    //             nome: "Bar"
+                    //         },
+                    //     ],
+                    //     checkIn: "12:00",
+                    //     checkOut: "11:00",
+                    //     voos: [
+                    //         {
+                    //             type: 0,
+                    //             nome: "LATAM",
+                    //             listTransporteDias: {
+                    //                 0: [{
+                    //                     tipoRota: "IDA",
+                    //                     horarioEmbarque: "16:45",
+                    //                     horarioDesembarque: "17:45",
+
+                    //                 },
+                    //                 {
+                    //                     tipoRota: "IDA",
+                    //                     horarioEmbarque: "16:45",
+                    //                     horarioDesembarque: "17:45",
+
+                    //                 }],
+                    //             },
+                    //             // localSaida: "São Paulo",
+                    //             // localChegada: "Arraial do Cabo",
+                    //             tipoVoo: "Direto",
+                    //             duracaoVoo: "1h 5m",
+                    //             imgCompanhiaAerea: "./imagens/latam.png"
+                    //         },
+                    //         {
+                    //             type: 0,
+                    //             nome: "ㅤGOL",
+                    //             listTransporteDias: {
+                    //                 0: [{
+                    //                     tipoRota: "IDA",
+                    //                     horarioEmbarque: "10:50",
+                    //                     horarioDesembarque: "11:55",
+
+                    //                 },
+                    //                 {
+                    //                     tipoRota: "IDA",
+                    //                     horarioEmbarque: "12:00",
+                    //                     horarioDesembarque: "13:05",
+
+                    //                 }],
+                    //             },
+                    //             // localSaida: "São Paulo",
+                    //             // localChegada: "Arraial do Cabo",
+                    //             tipoVoo: "Direto",
+                    //             duracaoVoo: "1h 5m",
+                    //             imgCompanhiaAerea: "./imagens/gol.png"
+                    //         },
+                    //         {
+                    //             type: 0,
+                    //             nome: "LATAM",
+                    //             listTransporteDias: {
+                    //                 0: [{
+                    //                     tipoRota: "VOLTA",
+                    //                     horarioEmbarque: "16:45",
+                    //                     horarioDesembarque: "17:50",
+
+                    //                 },
+                    //                 {
+                    //                     tipoRota: "VOLTA",
+                    //                     horarioEmbarque: "15:45",
+                    //                     horarioDesembarque: "16:55",
+
+                    //                 }],
+                    //             },
+                    //             // localSaida: "São Paulo",
+                    //             // localChegada: "Arraial do Cabo",
+                    //             tipoVoo: "Direto",
+                    //             duracaoVoo: "1h 5m",
+                    //             imgCompanhiaAerea: "./imagens/latam.png"
+                    //         },
+                    //         {
+                    //             type: 0,
+                    //             nome: "LATAM",
+                    //             listTransporteDias: {
+                    //                 0: [{
+                    //                     tipoRota: "VOLTA",
+                    //                     horarioEmbarque: "10:55",
+                    //                     horarioDesembarque: "11:55",
+
+                    //                 },
+                    //                 {
+                    //                     tipoRota: "VOLTA",
+                    //                     horarioEmbarque: "12:00",
+                    //                     horarioDesembarque: "13:05",
+
+                    //                 }],
+                    //             },
+                    //             // localSaida: "São Paulo",
+                    //             // localChegada: "Arraial do Cabo",
+                    //             tipoVoo: "Direto",
+                    //             duracaoVoo: "1h 5m",
+                    //             imgCompanhiaAerea: "./imagens/latam.png"
+                    //         },
+                    //     ],
+
+                    //     onibus: [
+                    //         {
+                    //             type: 1,
+                    //             listTransporteDias: {
+                    //                 0: [{
+                    //                     tipoRota: "IDA",
+                    //                     horarioEmbarque: "10:15",
+                    //                     horarioDesembarque: "20:45",
+                    //                 }]
+                    //             },
+                    //             localSaida: "Belo Horizonte",
+                    //             localChegada: "Arraial do Cabo",
+                    //             tipoPoltrona: "Semi-Leito",
+                    //             imagemPoltrona: "./imagens/poltrona.png",
+                    //         },
+                    //         {
+                    //             type: 1,
+                    //             listTransporteDias: {
+                    //                 0: [{
+                    //                     tipoRota: "VOLTA",
+                    //                     horarioEmbarque: "20:45",
+                    //                     horarioDesembarque: "10:15",
+                    //                 }]
+                    //             },
+                    //             localSaida: "Arraial do Cabo",
+                    //             localChegada: "Belo Horizonte",
+                    //             tipoPoltrona: "Leito",
+                    //             imagemPoltrona: "./imagens/poltrona2.png",
+                    //         },
+                    //     ],
+                    //     listProximidades: {
+                    //         Turistico: [
+                    //             {
+                    //                 id: 2,
+                    //                 nome: "Mangará Restaurante",
+                    //                 imagem: {
+                    //                     id: 1,
+                    //                     nome: "Mangará Restaurante",
+                    //                     dados: "./imagens/mangaraRestaurante.jpg"
+                    //                 }
+                    //             },
+                    //             {
+                    //                 id: 2,
+                    //                 nome: "Casa da Piedra",
+                    //                 imagem: {
+                    //                     id: 2,
+                    //                     nome: "Casa da Piedra",
+                    //                     dados: "./imagens/casaDaPiedra.jpg"
+                    //                 }
+                    //             },
+                    //             {
+                    //                 id: 2,
+                    //                 nome: "Sol na Cozinha",
+                    //                 imagem: {
+                    //                     id: 2,
+                    //                     nome: "Sol na Cozinha",
+                    //                     dados: "./imagens/solNaCozinha.jpg"
+                    //                 }
+                    //             },
+                    //             // .....
+                    //         ],
+                    //         Restaurante: [
+                    //             {
+                    //                 id: 2,
+                    //                 nome: "Manga Restaurante",
+                    //                 imagem: {
+                    //                     id: 1,
+                    //                     nome: "Mangará Restaurante",
+                    //                     dados: "./imagens/mangaraRestaurante.jpg"
+                    //                 }
+                    //             },
+                    //             {
+                    //                 id: 2,
+                    //                 nome: "Casa da PEDRA",
+                    //                 imagem: {
+                    //                     id: 2,
+                    //                     nome: "Mangará Restaurante",
+                    //                     dados: "./imagens/casaDaPiedra.jpg"
+                    //                 }
+                    //             },
+                    //             {
+                    //                 id: 2,
+                    //                 nome: "Sol na Cozinha",
+                    //                 imagem: {
+                    //                     id: 2,
+                    //                     nome: "Sol na Cozinha",
+                    //                     dados: "./imagens/solNaCozinha.jpg"
+                    //                 }
+                    //             },
+                    //             // .....
+                    //         ],
+                    //         Bar: [
+                    //             {
+                    //                 id: 2,
+                    //                 nome: "Mangará Restaurante",
+                    //                 imagem: {
+                    //                     id: 1,
+                    //                     nome: "Mangará Restaurante",
+                    //                     dados: "./imagens/mangaraRestaurante.jpg"
+                    //                 }
+                    //             },
+                    //             {
+                    //                 id: 2,
+                    //                 nome: "Casa da Piedra",
+                    //                 imagem: {
+                    //                     id: 2,
+                    //                     nome: "Casa da Piedra",
+                    //                     dados: "./imagens/casaDaPiedra.jpg"
+                    //                 }
+                    //             },
+                    //             {
+                    //                 id: 2,
+                    //                 nome: "Sol na Cozinha",
+                    //                 imagem: {
+                    //                     id: 2,
+                    //                     nome: "Sol na Cozinha",
+                    //                     dados: "./imagens/solNaCozinha.jpg"
+                    //                 }
+                    //             },
+                    //             // .....
+                    //         ],
+                    //         Boate: [
+                    //             {
+                    //                 id: 2,
+                    //                 nome: "Mangará Restaurante",
+                    //                 imagem: {
+                    //                     id: 1,
+                    //                     nome: "Mangará Restaurante",
+                    //                     dados: "./imagens/mangaraRestaurante.jpg"
+                    //                 }
+                    //             },
+                    //             {
+                    //                 id: 2,
+                    //                 nome: "Casa da Piedra",
+                    //                 imagem: {
+                    //                     id: 2,
+                    //                     nome: "Casa da Piedra",
+                    //                     dados: "./imagens/casaDaPiedra.jpg"
+                    //                 }
+                    //             },
+                    //             {
+                    //                 id: 2,
+                    //                 nome: "Sol na Cozinha",
+                    //                 imagem: {
+                    //                     id: 2,
+                    //                     nome: "Sol na Cozinha",
+                    //                     dados: "./imagens/solNaCozinha.jpg"
+                    //                 }
+                    //             },
+                    //             // .....
+                    //         ],
+                    //     },
+                    // };
+                    hos = data.hospedagem;
+                    document.getElementById("titulo").textContent = hos.titulo;
+                    document.getElementById("descricao").textContent = hos.descricao;
+                    document.getElementById("avaliacoes").textContent = data.avaliacoes;
+                    document.getElementById("classificacao").textContent = data.classificacao;
+                    document.getElementById("tipoQuarto").textContent = hos.tipoQuarto;
+                    document.getElementById("descricaoQuarto").textContent = hos.descricaoQuarto;
+                    // document.getElementById("imagemPrincipal").src = "data:image/png;base64," + hos.listImagens[0].dados;
+
+                    console.log("blabla")
+
+                    // for (let i = 0; i < hos.listExtras.length; i++) {
+                    //     document.getElementById(`servico${i + 1}`).textContent = hos.listExtras[i].nome;
+                    // }
+                    console.log("blabla")
+
+                    document.getElementById("primeiraCondicao").textContent = hos.checkIn;
+                    document.getElementById("segundaCondicao").textContent = hos.checkOut;
+
+                    function calcularDuracaoHorasMinutos(horarioSaida, horarioChegada) {
+                        const tempoSaida = new Date(`2000-01-01T${horarioSaida}`);
+                        const tempoChegada = new Date(`2000-01-01T${horarioChegada}`);
+                        const diferenca = Math.abs(tempoChegada - tempoSaida);
+
+                        const horas = Math.floor(diferenca / 3600000); // 1 hora = 3600000 ms
+                        const minutos = Math.floor((diferenca % 3600000) / 60000); // 1 minuto = 60000 ms
+
+                        return `${horas}h ${minutos}m`;
+                    }
+
+                    // Encontre os voos de ida e volta
+                    const voosIda = hos.voos[0].listDias.EXATA.find(voos => voos.tipoRota === "IDA").listHorarios;
+                    const voosVolta = hos.voos[0].listDias.EXATA.find(voos => voos.tipoRota === "VOLTA").listHorarios;
+
+                    // Preencha informações dos voos de ida nos elementos HTML
+                    for (let i = 0; i < voosIda.length && i < 2; i++) {
+                        const indexIda = i + 1;
+
+                        // Formatar o horário de saída e chegada para exibir apenas HH:mm
+                        const horarioSaidaIda = voosIda[i].horarioSaida.substring(0, 5);
+                        const horarioChegadaIda = voosIda[i].horarioChegada.substring(0, 5);
+
+                        // Atualize informações de ida
+                        document.getElementById(`companhiaAerea${indexIda}`).textContent = hos.voos[0].nome;
+                        document.getElementById(`horarioIda${indexIda}`).textContent = voosIda[i].horarioSaida;
+                        document.getElementById(`horarioVolta${indexIda}`).textContent = voosIda[i].horarioChegada;
+
+                        // Calcular a duração do voo de ida e preencher
+                        const duracaoVooElementIda = document.getElementById(`duracaoVoo${indexIda}`);
+                        if (duracaoVooElementIda) {
+                            const duracaoVooIda = calcularDuracaoHorasMinutos(voosIda[i].horarioSaida, voosIda[i].horarioChegada);
+                            duracaoVooElementIda.textContent = duracaoVooIda;
+                        }
+
+                        // ... (resto do código)
+                    }
+
+                    // Após preencher os horários de ida, agora preencha os horários de volta
+                    for (let i = 0; i < voosVolta.length && i < 2; i++) {
+                        const indexVolta = i + 3;
+
+                        // Formatar o horário de saída e chegada para exibir apenas HH:mm
+                        const horarioSaidaVolta = voosVolta[i].horarioSaida.substring(0, 5);
+                        const horarioChegadaVolta = voosVolta[i].horarioChegada.substring(0, 5);
+
+                        // Atualize informações de volta
+                        document.getElementById(`companhiaAerea${indexVolta}`).textContent = hos.voos[0].nome;
+                        document.getElementById(`horarioIda${indexVolta}`).textContent = voosVolta[i].horarioSaida;
+                        document.getElementById(`horarioVolta${indexVolta}`).textContent = voosVolta[i].horarioChegada;
+
+                        const duracaoVooElementVolta = document.getElementById(`duracaoVoo${indexVolta}`);
+                        if (duracaoVooElementVolta) {
+                            const duracaoVooVolta = calcularDuracaoHorasMinutos(voosVolta[i].horarioSaida, voosVolta[i].horarioChegada);
+                            duracaoVooElementVolta.textContent = duracaoVooVolta;
+                        }
+
+                        // ... (resto do código)
+                    }
+
+
+
+                    // for (let i = 0; i < hos.voos.length; i++) {
+                    //     const voo = hos.voos[i];
+                    //     const horarioEmbarque = voo.listDias["EXATA"].horarioEmbarque;
+                    //     const horarioDesembarque = voo.listTransporteDias[0][0].horarioDesembarque;
+                    //     const duracaoVoo = voo.duracaoVoo;
+
+                    //     // Preencha as informações do voo utilizando os IDs corretos no HTML
+                    //     document.getElementById(`companhiaAerea${i + 1}`).textContent = voo.nome;
+                    //     document.getElementById(`horarioIda${i + 1}`).textContent = horarioEmbarque;
+                    //     document.getElementById(`tipoVoo${i + 1}`).textContent = voo.tipoVoo;
+                    //     document.getElementById(`horarioVolta${i + 1}`).textContent = horarioDesembarque;
+                    //     document.getElementById(`duracaoVoo${i + 1}`).textContent = duracaoVoo;
+                    //     document.getElementById(`imgCompanhiaAerea${i + 1}`).src = voo.imgCompanhiaAerea;
+                    // }
+
+                    // Preencher detalhes dos ônibus de ida
+                    for (let i = 0; i < data.onibus.length; i++) {
+                        const onibus = data.onibus[i];
+
+                        if (onibus.listTransporteDias[0][0].tipoRota === "IDA") {
+                            document.getElementById(`primeiroHorarioEmbarque`).textContent = onibus.listTransporteDias[0][0].horarioEmbarque;
+                            document.getElementById(`primeiroHorarioDesembarque`).textContent = onibus.listTransporteDias[0][0].horarioDesembarque;
+                            document.getElementById(`primeiroLocalEmbarque`).textContent = onibus.localSaida;
+                            document.getElementById(`primeiroLocalDesembarque`).textContent = onibus.localChegada;
+                            document.getElementById(`primeirotipoPoltrona`).textContent = onibus.tipoPoltrona;
+                            document.getElementById(`primeirotipoPoltronaIcone`).src = onibus.imagemPoltrona;
+                        }
+                    }
+
+                    // Preencher detalhes dos ônibus de volta
+                    for (let i = 0; i < data.onibus.length; i++) {
+                        const onibus = data.onibus[i];
+
+                        if (onibus.listTransporteDias[0][0].tipoRota === "VOLTA") {
+                            document.getElementById(`segundoHorarioEmbarque`).textContent = onibus.listTransporteDias[0][0].horarioEmbarque;
+                            document.getElementById(`segundoHorarioDesembarque`).textContent = onibus.listTransporteDias[0][0].horarioDesembarque;
+                            document.getElementById(`segundoLocalEmbarque`).textContent = onibus.localSaida;
+                            document.getElementById(`segundoLocalDesembarque`).textContent = onibus.localChegada;
+                            document.getElementById(`segundotipoPoltrona`).textContent = onibus.tipoPoltrona;
+                            document.getElementById(`segundotipoPoltronaIcone`).src = onibus.imagemPoltrona;
+                        }
+                    }
+
+
+                    const categorias = ["Turísticos", "Restaurantes", "Bares", "Boates"];
+                    console.log(categorias);
+                    categorias.forEach(function (categoria) {
+                        console.log("categorias");
+                        const categoriaData = data.listProximidades[categoria];
+                        console.log(categoriaData);
+                        const categoriaContent = document.getElementById(`${categoria.toLowerCase()}Content`);
+
+                        if (categoriaContent) {
+                            categoriaData.forEach(function (lugar, index) {
+                                const lugarContainer = categoriaContent.querySelector(`#titulo${categoria}${index + 1}`);
+                                const lugarImagem = categoriaContent.querySelector(`#imagem${categoria}${index + 1}`);
+
+                                if (lugarContainer && lugarImagem) {
+                                    lugarContainer.textContent = lugar.nome;
+                                    lugarImagem.src = lugar.imagem.dados;
+                                }
+                            });
+                        }
+                    });
+
+
+                });
+            })
+            .catch(function (error) {
+                // Tratar erros ocorridos durante a requisição
+                console.error('Erro:', error);
+            });
+    </script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
